@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>My Simple Web Page</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+   
+<div class="container">
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/money.gif') }}" alt="Example Image">
+<form method = "post" action ="/predict">
+   
+   <label>Age</label>
+   <input type = "text" name ="age"  placeholder="Enter age"      > <br>      
+   <label>Gender</label>
+   <input type = "text"  name ="gender"   placeholder="Enter gender"  >  <br>  
+   <label>Income</label>
+   <input type = "text"  name ="income"    placeholder="Enter income " > <br>  
+   <label>Credit_score</label>
+   <input type = "text"  name ="credit" placeholder="Enter credit"  > <br> <br>
+   <input type = "submit" value="Predict">  
+   {% if result %}  
+   <h2>{{ result }}</h2>
+   {% endif %}
+</form>
+</div>
+</div>
+</body>
+</html>
